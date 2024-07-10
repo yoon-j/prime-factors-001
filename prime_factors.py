@@ -1,11 +1,8 @@
 class PrimeFactor:
-    def of(self, number) -> []:
-        prime_factors = []
-        divisor = 2
-        while number > 1:
-            while not number % divisor:
-                prime_factors.append(divisor)
-                number //= divisor
-            divisor += 1
+    def of(self, number, divisor=2) -> []:
+        if number < 2: return []
 
-        return prime_factors
+        if number % divisor:
+            return self.of(number, divisor + 1)
+        else:
+            return [divisor] + self.of(number // divisor, divisor)
