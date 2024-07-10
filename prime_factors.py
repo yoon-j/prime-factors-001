@@ -3,8 +3,9 @@ class PrimeFactor:
         prime_factors = []
         if number > 1:
             if number == 4:
-                prime_factors.append(2)
-                prime_factors.append(2)
+                while not number % 2:
+                    prime_factors.append(2)
+                    number //= 2
             else:
                 prime_factors.append(number)
         return prime_factors
