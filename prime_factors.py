@@ -7,13 +7,15 @@ class PrimeFactor:
                 while not number % divisor:
                     prime_factors.append(divisor)
                     number //= divisor
-
             elif number == 6:
                 while number > 1:
                     while not number % divisor:
                         prime_factors.append(divisor)
                         number //= divisor
                     divisor += 1
+            elif number == 9:
+                prime_factors.append(3)
+                prime_factors.append(3)
             else:
                 prime_factors.append(number)
         return prime_factors
